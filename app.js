@@ -18,6 +18,7 @@ var gameOver = false;
 
 
 function myFunc(){
+	//update("debug", clicks);
 	if(clicks==0){//first button click
 
 		//store origin time ONLY
@@ -70,8 +71,10 @@ function myFunc(){
 
 
 		update("score", "Score: "+stdDev);
-		total = 0;
+		//total = 0;
 	}
+
+
 
 	//clicks = 0;
 
