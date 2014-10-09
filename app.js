@@ -8,6 +8,7 @@ function newTS() { return new Date().getTime(); };
 var total = 0;
 var clicks = 0;
 var allTimes = [];
+//need to initialize once so that i can keep a time running from zero or something
 var origin = newTS()%100000000;
 var firstTime = origin - newTS()%1000000;
 //var millis = newTS() % 10000;
@@ -28,6 +29,7 @@ var i = 0;
 function myFunc(){
 	clicks++;
 
+	//in the process of fixing
 	var theTime = newTS() % 1000000;
 	allTimes.push(theTime);
 	total+=theTime;
