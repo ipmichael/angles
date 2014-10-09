@@ -3,4 +3,8 @@ if (!Date.now) {
 }
 
 var myNum = Date.now;
-<p>myNum</p>
+
+function myFunc(){
+	document.getElementById("num").innerHTML = myNum;
+}
+
