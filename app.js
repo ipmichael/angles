@@ -36,7 +36,7 @@ function myFunc(){
 		allClicks[clicks-1]=next;
 		allTimes[clicks]=realTime;
 
-		total+=realTime;
+		total+=next;
 		clicks++;
 	}else if(clicks < 11){
 		//11 > clicks >= 2
@@ -47,7 +47,7 @@ function myFunc(){
 		allClicks[clicks-1] = next;
 		allTimes[clicks]=realTime;
 
-		total+=realTime;
+		total+=next;
 		clicks++;
 	}else{
 		update("disp", "ya done son");
@@ -58,15 +58,20 @@ function myFunc(){
 
 		//reminder: allTimes is the actual time stamps, starting with origin at 0 to clicks
 		//allClicks is intervals, starting from 0 to clicks - 1
-		for(i=0; i<clicks-1; i++){
-			total+=allClicks[i];
-		}
+		
 		var mean = total / (clicks - 1);
+		var varTotal = 0;
+		for(i=0; i<clicks-1; i++){
+			varTotal += Math.pow(mean-allClicks[i], 2);
+		}
 
-		for(i=)
+		var stdDev = Math.sqrt(varTotal/(clicks-1));
+
+		update("score", "Score: "+stdDev);
+		total = 0;
 	}
 
-	clicks = 0;
+	//clicks = 0;
 
 	// allTimes[clicks] = theTime;
 	// clicks++;
