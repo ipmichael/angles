@@ -100,6 +100,8 @@ function myFunc(){
 	// document.getElementById("num").innerHTML = "clicks: "+clicks+"\ntime: " + theTime +"\nstdDev: "+stdDev;
 }
 
+
+
 function update(id, num){
 
 	document.getElementById(id).innerHTML = num;

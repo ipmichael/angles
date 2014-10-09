@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Angles by mip</title>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="javascripts/scale.fix.js"></script>
@@ -37,7 +38,7 @@
 	<button onclick = "myFunc()">BUTTON</button>
 
 <!--  <myButton onclick ="myFunc()">button</myButton>
- --> <p id = "disp">Ready? Click once to get started, then 10 more times on the same beat.</p>
+ --> <p id = "disp">Ready? Click once to get started, then 10 more times on the same interval.</p>
  <!-- 	<p>Name: <input type="text" ng-model="name"></p>
  	<p ng-bind="name"></p> -->
   <br>
@@ -45,6 +46,9 @@
   <p id = "score">Score: </p>
 </h3>
 
+<button onclick ="showMore()">more numbers</button>
+<p id = "desc">You can click this when you're done.</p>
+<p id = "stats"></p>
 <p id = "debug"></p>
 
 </div>
