@@ -43,14 +43,18 @@ function myFunc(){
 		clicks++;
 	}else if(clicks == 1){
 		var realTime =newTS()%1000000;
+		//next is the interval between clicks
 		var next = realTime - origin;
+
 		allClicks[clicks-1]=next;
 		allTimes[clicks]=realTime;
 		clicks++;
 	}else if(clicks < 11){
 		//11 > clicks >= 2
-		theTime = (newTS()%1000000) - allTimes[clicks-2];
-		allTimes[clicks-1]=theTime;
+		realTime = newTS()%1000000;
+		next = realTime - allTimes[clicks-1];
+
+		allTimes[clicks]=realTime;
 		clicks++;
 	}
 
@@ -74,6 +78,11 @@ function myFunc(){
 	var stdDev = Math.sqrt(tempTotal/allTimes.length);
 
 	document.getElementById("num").innerHTML = "clicks: "+clicks+"\ntime: " + theTime +"\nstdDev: "+stdDev;
+}
+
+function updateDisplay(){
+
+	
 }
 
 // function personController($scope) {
