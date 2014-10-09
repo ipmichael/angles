@@ -50,7 +50,7 @@ function myFunc(){
 		total+=next;
 		clicks++;
 	}else{
-		update("disp", "ya done son");
+		update("disp", "refresh to play again");
 		gameOver = true;
 	}
 
@@ -65,7 +65,9 @@ function myFunc(){
 			varTotal += Math.pow(mean-allClicks[i], 2);
 		}
 
-		var stdDev = Math.sqrt(varTotal/(clicks-1));
+		//var stdDev = Math.sqrt(varTotal/(clicks-1));
+		var stdDev = Math.floor(Math.sqrt(varTotal/(clicks-1)));
+
 
 		update("score", "Score: "+stdDev);
 		total = 0;
