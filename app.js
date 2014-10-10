@@ -74,37 +74,34 @@ function myFunc(){
 		//total = 0;
 	}
 
-
-
-	//clicks = 0;
-
-	// allTimes[clicks] = theTime;
-	// clicks++;
-
-	//in the process of fixing
-	// theTime = newTS() % 1000000;
-	// allTimes.push(theTime);
-	// total+=theTime;
-
-	// var tempTotal = 0;
-
-	// var mean = total/clicks;
-
-	// for(i=0; i < allTimes.length; i++){
-
-	// 	tempTotal+=Math.pow(allTimes[i]-mean,2);
-	// }
-
-	// var stdDev = Math.sqrt(tempTotal/allTimes.length);
-
-	// document.getElementById("num").innerHTML = "clicks: "+clicks+"\ntime: " + theTime +"\nstdDev: "+stdDev;
+	//next: add reading and writing of high scores into a local text file!
 }
 
+function showMore(){
+	readTextFile("highscores.txt");
+}
 
+function update(id, text){
 
-function update(id, num){
+	document.getElementById(id).innerHTML = text;
+}
 
-	document.getElementById(id).innerHTML = num;
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
+            }
+        }
+    }
+    rawFile.send(null);
 }
 
 // function personController($scope) {
