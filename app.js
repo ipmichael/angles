@@ -79,6 +79,7 @@ function myFunc(){
 
 function showMore(){
 	readTextFile("highscores.txt");
+	//readTextFile("file:///C:/Users/Michael.Sang-XPS/Documents/angles/angles/highscores.txt")
 }
 
 function update(id, text){
@@ -97,7 +98,7 @@ function readTextFile(file)
             if(rawFile.status === 200 || rawFile.status == 0)
             {
                 var allText = rawFile.responseText;
-                alert(allText);
+                update("desc", allText);
             }
         }
     }
