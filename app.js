@@ -77,14 +77,31 @@ function myFunc(){
 	//next: add reading and writing of high scores into a local text file!
 }
 
-function showMore(){
-	readTextFile("highscores.txt");
-	//readTextFile("file:///C:/Users/Michael.Sang-XPS/Documents/angles/angles/highscores.txt")
-}
+
 
 function update(id, text){
 
 	document.getElementById(id).innerHTML = text;
+}
+
+function writeToFile(d1, d2){
+    var fso = new ActiveXObject("Scripting.FileSystemObject");
+    var fh = fso.OpenTextFile("highscores.txt", 8, false, 0);
+    fh.WriteLine(d1 + ',' + d2);
+    fh.Close();
+}
+
+var submit = document.getElementById("submit");
+
+submit.onclick = function () {
+    var id      = document.getElementById("id").value;
+    var content = document.getElementById("content").value;
+    writeToFile(id, content);
+}
+
+function showMore(){
+	readTextFile("highscores.txt");
+	//readTextFile("file:///C:/Users/Michael.Sang-XPS/Documents/angles/angles/highscores.txt")
 }
 
 function readTextFile(file)
