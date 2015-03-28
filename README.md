@@ -1,4 +1,2 @@
 angles
-======
-
-a game made using angular
+- let's see if this becomes anything
